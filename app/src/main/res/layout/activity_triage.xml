@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?android:attr/windowBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Injury Triage AI"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="?android:attr/textColorPrimary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Answering these questions will help us route you to the correct facility."
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="24dp">
+
+        <LinearLayout
+            android:id="@+id/questionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Question 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Are you or anyone else bleeding severely?"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+            <RadioGroup
+                android:id="@+id/rgBleeding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rbBleedingYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yes" />
+                <RadioButton android:id="@+id/rbBleedingNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+            </RadioGroup>
+
+            <!-- Question 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="2. Is everyone conscious and breathing?"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+            <RadioGroup
+                android:id="@+id/rgConscious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rbConsciousYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yes" />
+                <RadioButton android:id="@+id/rbConsciousNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+            </RadioGroup>
+
+            <!-- Question 3 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="3. Can you move your limbs?"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+            <RadioGroup
+                android:id="@+id/rgMove"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rbMoveYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yes" />
+                <RadioButton android:id="@+id/rbMoveNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnAnalyze"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:text="Analyze with Triage AI"
+                android:backgroundTint="#9C27B0" />
+
+            <TextView
+                android:id="@+id/tvAIResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:padding="16dp"
+                android:background="#1A9C27B0"
+                android:textColor="#9C27B0"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnNavigate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:text="Navigate to Facility"
+                android:visibility="gone"
+                android:backgroundTint="#4CAF50" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
