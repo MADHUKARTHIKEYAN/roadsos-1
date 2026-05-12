@@ -4,11 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.carsosphase1"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36  // ← THIS FIX
 
     defaultConfig {
         applicationId = "com.example.carsosphase1"
@@ -16,7 +12,6 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
